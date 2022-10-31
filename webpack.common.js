@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -15,16 +16,34 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'fonts/'
+        }
+      },
+      {
+        test: /\.(s[ac]ss|css)$/i,
         use: [
           {
             loader: 'style-loader',
           },
           {
             loader: 'css-loader',
+          },{
+            loader: 'sass-loader'
           },
         ],
       },
+      {
+        test: /\.(png|jpg|jpe?g|gif|webp)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        }
+      },
+      
     ],
   },
   plugins: [
@@ -32,6 +51,7 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
     }),
+    new FaviconsWebpackPlugin("src/public/images/icon.png"),
     new CopyWebpackPlugin({
       patterns: [
         {

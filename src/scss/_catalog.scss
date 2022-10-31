@@ -1,0 +1,16 @@
+.catalog{
+    &__container{
+        grid-template-columns: repeat(2,max-content);
+        justify-content: center;
+    }
+    &__card{
+        position: relative;
+        overflow: hidden;
+        width: 21rem;
+        box-shadow: 0 0 4px hsla(var(--hue-color), 64%, 15%, 0.15);
+        border: 10px;
+    }
+    &__img{
+        width: 100%;
+    }
+}

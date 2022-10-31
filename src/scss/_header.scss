@@ -1,0 +1,140 @@
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8888;
+    background-color: var(--first-color);
+}
+
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+        color: var(--white-color);
+    }
+    &__toggle{
+        fill: var(--white-color);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__logo{
+        font-weight: 600;
+    }
+
+    &__menu{
+        position: fixed;
+        background-color: var(--body-color);
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        box-shadow: -1px 0 4px var(--shadow-color);
+        padding: 3rem;
+        transition: .4s;
+
+        &.show-menu{
+            right: 0;
+        }
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+    }
+    &__link{
+        color: var(--text-color-light);
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &:hover{
+            color: var(--text-color);
+        }
+    }
+    &__close{
+        fill: var(--text-color);
+        background: transparent;
+        position: absolute;
+        top: 0.75rem;
+        right: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+.scroll-header{
+    background-color: var(--body-color);
+    box-shadow: 0 0 4px hsla(var(--hue-color), 64%, 15%, .15);
+    & .nav__toggle{
+        fill: var(--title-color);
+    }
+}
+
+.active-link{
+    position: relative;
+    color: var(--title-color);
+
+    &::before{
+        content: '';
+        position: absolute;
+        background-color: var(--title-color);
+        width: 100%;
+        height: 2px;
+        bottom: -.75rem;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .nav{
+        height: calc(var(--header-height) + 1.5rem);
+        &__menu{
+            position: relative;
+            display: flex;
+            column-gap: 1rem;
+            top: initial;
+            right: initial;
+            width: initial;
+            height: initial;
+            box-shadow: none;
+            padding: 0;
+            background-color: transparent;
+        }
+        &__link{
+            color: var(--white-color);
+            text-transform: initial;
+
+            &:hover{
+                color: var(--white-color);
+            }
+        }
+        &__list{
+            flex-direction: row;
+            column-gap: 4rem;
+        }
+        
+        &__toggle,
+        &__close{
+            display: none;
+        }
+    }
+    .active-link::before{
+        background-color: var(--white-color);
+    }
+    
+    .scroll-header{
+        .nav__link{
+            color: var(--text-color);
+        }
+        .active-link{
+            color: var(--title-color);
+        }
+        .active-link::before{
+            background-color: var(--title-color);
+        }
+    }
+}

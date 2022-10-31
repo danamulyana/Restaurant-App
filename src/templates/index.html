@@ -2,16 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
-  <title>Restaurant Apps Starter Project</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DN Restaurant Apps</title>
+  <meta name="description" content="Restaurant dengan rating-rating terbaik">
 </head>
 <body>
-  <h1>Restaurant Apps Starter Project</h1>
-  <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-  <p>Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros sebagai background hero elemen</p>
-  <img src="./images/heros/hero-image_1.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_2.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_3.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_4.jpg" width="450" alt="">
+  <a href="#Hero" class="skip-link">Menuju ke Kontent</a>
+  <header class="header"  id="header">
+    <nav class="nav container" >
+      <a href="/" class="nav__logo">
+        <img src="images/logo-white.webp" width="90" alt="DN Restaurant">
+      </a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list" id="nav-list">
+          <li class="nav__item">
+            <a href="/" class="nav__link" data-menu="Hero">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-menu="favorite">Favorite</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://www.linkedin.com/in/dana-mulyana-a30699163/" class="nav__link" data-menu="about-us">About Us</a>
+          </li>
+        </ul>
+        <button id="nav-close" class="nav__close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+        </button>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-controls="nav-list" aria-haspopup="true">
+        <!-- <img src="/images/icon/menu-line.svg" > -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" alt="menu-toggle"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" /></svg>
+      </button>
+    </nav>
+  </header>
+  <main id="main">
+    <section id="Hero" class="hero">
+      <img src="images/heros/hero-image_2.jpg" alt="Hero Image" class="hero__img">
+      <div class="hero__container container grid">
+        <div class="hero__data">
+          <h1 class="hero__data-subtitle" tabindex="0">temukan restoran di kota Anda</h1>
+          <h2 class="hero__data-title" tabindex="0">temukan makanan dan minuman terbaik</h2>
+          <a href="#" class="button">Temukan</a>
+        </div>
+        <div class="hero__social"></div>
+      </div>
+    </section>
+    <!-- <section class="catalog section">
+      <h2 class="section__title">Jelajahi Restoran Terdekat</h2>
+      <div class="catalog__container container grid">
+        <article class="catalog__card">
+          <img class="catalog__img" src="https://restaurant-api.dicoding.dev/images/medium/41" alt="Bring Your Phone Cafe" loading="lazy">
+          <div>
+            <h1>Bring Your Phone Cafe</h1>
+            <div class="">
+              <p>4.2</p>
+              <p>Medan</p>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem esse ad repellat.</p>
+          </div>
+        </article>
+        <article class="catalog__card">
+          <img class="catalog__img" src="https://restaurant-api.dicoding.dev/images/medium/29" alt="Bring Your Phone Cafe" loading="lazy">
+          <figcaption>
+            <h1>Bring Your Phone Cafe</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem esse ad repellat.</p>
+          </figcaption>
+        </article>
+      </div>
+    </section> -->
+  </main>
 </body>
 </html>
