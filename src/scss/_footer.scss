@@ -8,6 +8,8 @@
 
     &__copy,
     &__terms-link{
+        vertical-align: middle;
+        line-height: 44px;
         font-size: var(--small-font-size);
         color: var(--text-color-light);
     }

@@ -17,6 +17,8 @@
         color: var(--white-color);
     }
     &__toggle{
+        width: 44px;
+        height: 44px;
         fill: var(--white-color);
         background-color: transparent;
         border: none;
@@ -45,12 +47,18 @@
     &__list{
         display: flex;
         flex-direction: column;
-        row-gap: 2.5rem;
+        row-gap: 1.5rem;
     }
     &__link{
         color: var(--text-color-light);
         font-weight: 600;
         text-transform: uppercase;
+        min-width: 44px;
+        line-height: 44px;
+        vertical-align: middle;
+        width: 100%;
+        display: inline-block;
+
 
         &:hover{
             color: var(--text-color);
@@ -63,6 +71,8 @@
         top: 0.75rem;
         right: 1rem;
         font-size: 1.5rem;
+        width: 44px;
+        height: 44px;
     }
 }
 
