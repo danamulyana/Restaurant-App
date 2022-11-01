@@ -1,4 +1,4 @@
-const Main = () => {
+const Header = () => {
     const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
@@ -24,13 +24,13 @@ const Main = () => {
     navLink.forEach(n => n.addEventListener('click',linkAction));
 
     const scrollHeader = () => {
-        const header = document.getElementById('header');
+        const headerElem = document.getElementById('header');
         const imgLogo = document.querySelector('#header img');
         if(window.scrollY >= 100){
-            header.classList.add('scroll-header');
+            headerElem.classList.add('scroll-header');
             imgLogo.src = "images/logo-black.webp";
         }else{
-            header.classList.remove('scroll-header')
+            headerElem.classList.remove('scroll-header')
             imgLogo.src = "images/logo-white.webp";
         }
     }
@@ -58,4 +58,4 @@ const Main = () => {
     window.addEventListener('scroll',scrollActive);
 }
 
-export default Main;
+export default Header;

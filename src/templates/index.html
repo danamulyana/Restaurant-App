@@ -26,11 +26,11 @@
             <a href="https://www.linkedin.com/in/dana-mulyana-a30699163/" class="nav__link" data-menu="about-us">About Us</a>
           </li>
         </ul>
-        <button id="nav-close" class="nav__close">
+        <button id="nav-close" class="nav__close" aria-label="tutup navbar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
         </button>
       </div>
-      <button class="nav__toggle" id="nav-toggle" aria-controls="nav-list" aria-haspopup="true">
+      <button class="nav__toggle" id="nav-toggle" aria-controls="nav-list" aria-label="buka navbar" aria-haspopup="true">
         <!-- <img src="/images/icon/menu-line.svg" > -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" alt="menu-toggle"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" /></svg>
       </button>
@@ -42,35 +42,27 @@
       <div class="hero__container container grid">
         <div class="hero__data">
           <h1 class="hero__data-subtitle" tabindex="0">temukan restoran di kota Anda</h1>
-          <h2 class="hero__data-title" tabindex="0">temukan makanan dan minuman terbaik</h2>
+          <h2 class="hero__data-title" tabindex="0">temukan<br> makanan dan minuman <strong>terbaik</strong></h2>
           <a href="#" class="button">Temukan</a>
         </div>
         <div class="hero__social"></div>
       </div>
     </section>
-    <!-- <section class="catalog section">
-      <h2 class="section__title">Jelajahi Restoran Terdekat</h2>
-      <div class="catalog__container container grid">
-        <article class="catalog__card">
-          <img class="catalog__img" src="https://restaurant-api.dicoding.dev/images/medium/41" alt="Bring Your Phone Cafe" loading="lazy">
-          <div>
-            <h1>Bring Your Phone Cafe</h1>
-            <div class="">
-              <p>4.2</p>
-              <p>Medan</p>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem esse ad repellat.</p>
-          </div>
-        </article>
-        <article class="catalog__card">
-          <img class="catalog__img" src="https://restaurant-api.dicoding.dev/images/medium/29" alt="Bring Your Phone Cafe" loading="lazy">
-          <figcaption>
-            <h1>Bring Your Phone Cafe</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem esse ad repellat.</p>
-          </figcaption>
-        </article>
+    <section class="catalog section">
+      <h2 class="section__title" tabindex="0">Jelajahi Restoran Terdekat</h2>
+      <div class="catalog__container container grid" id="catalog-data">
+        
       </div>
-    </section> -->
+    </section>
   </main>
+  <footer class="footer section">
+    <div class="footer__container container">
+      <p class="footer__copy" tabindex="0">©️2022 DNRestaurantsApp. All Rigths reserved.</p>
+      <div class="footer__terms">
+        <a href="#" class="footer__terms-link">Terms & Agreements</a>
+        <a href="#" class="footer__terms-link">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

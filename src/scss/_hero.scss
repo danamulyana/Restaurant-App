@@ -28,7 +28,7 @@
             font-size: 0.938rem;
         }
         &-title{
-            font-style: var(--biggest-font-size);
+            font-size: var(--biggest-font-size);
             font-weight: 500;
             margin-bottom: var(--mb-2-5);
         }
@@ -46,6 +46,18 @@
     @media screen and (min-width: 1024px) {
         &__container{
             grid-template-rows: 2fr .5fr;
+        }
+    }
+
+    @media screen and (min-height: 721px){
+        body{
+            margin: 0;
+        }
+        &{
+            &__container,
+            &__img{
+                height: 640px;
+            }
         }
     }
 }

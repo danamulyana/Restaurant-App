@@ -1,0 +1,30 @@
+.footer{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+        text-align: center;
+    }
+
+    &__copy,
+    &__terms-link{
+        font-size: var(--small-font-size);
+        color: var(--text-color-light);
+    }
+    &__terms{
+        display: flex;
+        column-gap: 1.5rem;
+        justify-content: center;
+
+        &-link:hover{
+            color: var(--text-color);
+        }
+    }
+
+    @media  screen and (min-width: 768px) {
+        &__container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}

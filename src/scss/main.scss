@@ -126,6 +126,9 @@ input{
     body{
         margin: 0;
     }
+    .section{
+        padding: 7rem 0 2rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -140,7 +143,9 @@ input{
         max-width: 1024px;
     }
 }
+
 @import "./header";
 @import "./hero";
 @import "./button";
 @import "./catalog";
+@import "./footer";

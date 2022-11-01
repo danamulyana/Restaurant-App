@@ -24,19 +24,6 @@ module.exports = {
         }
       },
       {
-        test: /\.(s[ac]ss|css)$/i,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },{
-            loader: 'sass-loader'
-          },
-        ],
-      },
-      {
         test: /\.(png|jpg|jpe?g|gif|webp)$/i,
         loader: 'file-loader',
         options: {
