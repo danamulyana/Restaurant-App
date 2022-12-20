@@ -18,7 +18,9 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
-    "eslint": "^8.17.0",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "favicons-webpack-plugin": "^6.0.0-alpha.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
@@ -38,9 +40,17 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
-    "whatwg-fetch": "^3.6.2"
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
-    "regenerator-runtime": "^0.13.9"
+    "idb": "^7.1.1",
+    "regenerator-runtime": "^0.13.9",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
+    "workbox-window": "^6.5.4"
   }
 }

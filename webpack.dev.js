@@ -15,8 +15,8 @@ module.exports = merge(common, {
           },
           {
             loader: 'css-loader',
-          },{
-            loader: 'sass-loader'
+          }, {
+            loader: 'sass-loader',
           },
         ],
       },

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -20,17 +21,17 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'fonts/'
-        }
+          outputPath: 'fonts/',
+        },
       },
       {
         test: /\.(png|jpg|jpe?g|gif|webp)$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-        }
+        },
       },
-      
+
     ],
   },
   plugins: [
@@ -38,7 +39,10 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
     }),
-    new FaviconsWebpackPlugin("src/public/images/icon.png"),
+    new FaviconsWebpackPlugin({
+      logo: 'src/public/images/icon.png',
+      logoMaskable: 'src/public/images/icon.png',
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -46,6 +50,11 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
+    }),
+    new InjectManifest({
+      swSrc: path.resolve(__dirname, 'src/scripts/utils/sw.js'),
+      injectionPoint: 'self.__WB_MANIFEST',
+      swDest: 'sw.js',
     }),
   ],
 };

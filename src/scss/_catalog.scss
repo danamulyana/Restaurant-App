@@ -37,6 +37,10 @@
     &__title{
         font-size: var(--h3-font-size);
         margin-bottom: var(--mb-0-25);
+
+        a{
+            color: var(--title-color);
+        }
     }
 
     &__city{
