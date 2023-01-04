@@ -1,9 +1,10 @@
 import RestaurantSource from '../../data/restaurant-source';
-import { createItemTemplate } from '../templates/template-creator';
+import { createItemTemplate, loading } from '../templates/template-creator';
 
 const Home = {
   async render() {
     return `
+        ${loading.show()}
         <section class="catalog section">
             <section id="Hero" class="hero">
                 <img src="images/heros/hero-image_2.jpg" alt="Hero Image" class="hero__img" loading='lazy'>
@@ -25,6 +26,7 @@ const Home = {
 
   async afterRender() {
     const restaurants = await RestaurantSource.getRestaurant();
+    await loading.hide();
     const restaurantContainer = document.querySelector('#catalog-data');
     restaurants.forEach((restaurant) => {
       restaurantContainer.innerHTML += createItemTemplate(restaurant);

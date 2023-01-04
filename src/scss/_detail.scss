@@ -1,0 +1,164 @@
+.Detail__restaurant{
+    padding: 0 0.5rem;
+    position: relative;
+
+    &-h1{
+        padding: .9rem 0;
+        letter-spacing: 2px;
+        font-size: var(--h1-font-size);
+        margin: 0;
+    }
+
+    &-h2{
+        padding: 1.7rem 0;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 800;
+        margin: 0;
+        text-transform: uppercase;
+        position: relative;
+
+        &::before{
+            content: '';
+            height: 4px;
+            border-radius: 2px;
+            width: 30px;
+            position: absolute;
+            background-color: var(--first-color);
+            left: 50%;
+            top: 0;
+            margin-left: -15px;
+        }
+    }
+
+    &-h3{
+        padding: .7rem 0;
+        letter-spacing: 2px;
+        margin: 0;
+        position: relative;
+        font-size: var(--h3-font-size);
+    }
+
+    &-init{
+
+        &_row{
+            position: relative;
+            
+            & img{
+                display: block;
+                overflow: hidden;
+            }
+        }
+    
+        &_ralo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            &__rating{
+                display: flex;
+            }
+    
+            &__location{
+                display: flex;
+                margin: 1rem 0;
+                align-items: center;
+    
+                p{
+                    margin: 0 .3rem;
+                }
+            }
+        }
+    
+        &_categories{
+            display: flex;
+            flex-wrap: wrap;
+            gap: .3rem;
+            margin-top: .5rem;
+            & span{
+                font-size: var(--small-font-size);
+                padding: 0.3rem 1rem;
+                background-color: var(--first-color);
+                color: var(--white-color);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    &-menus{
+        margin: 2rem auto;
+
+        &-foods, &-drinks{
+            display: flex;
+            flex-wrap: wrap;
+            gap: .8rem;
+            margin-top: .9rem;
+        }
+
+        span{
+            display: block;
+            padding: 0.3rem 1rem;
+            background-color: var(--first-color);
+            color: var(--white-color);
+            border-radius: 10px;
+            font-size: var(--normal-font-size);
+        }
+
+    }
+
+    &-favorite{
+        position: fixed;
+        bottom: 3rem;
+        right: 2rem;
+        background: var(--first-color);
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+
+        & .like{
+            display: inline-block;
+            color: var(--white-color);
+            font-size: var(--normal-font-size);
+            background-color: transparent;
+            padding: .6rem;
+            text-align: center;
+            vertical-align: baseline;
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        &-h1{
+            padding: 1.3rem 0;
+        }
+        &-init{
+            margin: 3rem auto;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+    
+            &_row{
+                width: 48%;
+                position: relative;
+    
+                & img{
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+
+            &_ralo{
+                &__location {
+                    display: flex;
+                    margin: 1rem 0;
+                    align-items: center;
+        
+                    p{
+                        margin: 0 .3rem;
+                    }
+                }
+            }
+
+        }
+    }
+}

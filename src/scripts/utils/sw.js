@@ -2,7 +2,7 @@ import 'regenerator-runtime';
 import { cleanupOutdatedCaches, precacheAndRoute } from 'workbox-precaching';
 import { setCacheNameDetails } from 'workbox-core';
 import { registerRoute } from 'workbox-routing';
-import { CacheFirst, NetworkFirst } from 'workbox-strategies';
+import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
 
 setCacheNameDetails({
@@ -45,6 +45,15 @@ registerRoute(
         maxEntries: 50,
       }),
     ],
+  }),
+);
+
+registerRoute(
+  ({ request }) => request.destination === 'style'
+    || request.destination === 'script'
+    || request.destination === 'worker',
+  new StaleWhileRevalidate({
+    cacheName: 'my-assets-cache',
   }),
 );
 

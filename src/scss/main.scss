@@ -48,7 +48,7 @@ html{
 }
 
 body{
-    margin: var(--header-height) 0 0 0;
+    margin: calc(var(--header-height) + 20px) 0 0 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     color: var(--text-color);
@@ -109,6 +109,9 @@ input{
     gap: 1.5rem;
 }
 
+.mb-3{
+    margin-bottom: var(--mb-1-5);
+}
 .skip-link{
     position: absolute;
     top: -40px;
@@ -122,6 +125,41 @@ input{
         top: 0;
     }
 }
+
+.form-label{
+    display: block;
+    margin-bottom: var(--mb-0-25);
+    font-size: var(--small-font-size);
+}
+
+.form-control{
+    width: 100%;
+    color: var(--first-color);
+    box-shadow: var(--shadow-color);
+    padding: var(--mb-0-5) var(--mb-0-75);
+    line-height: 1.25;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25px;
+    font-size: var(--small-font-size);
+    
+    &:focus{
+        box-shadow: 0 0 0 3px var(--first-color-alt);
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+}
+
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    font-weight: var(--font-semi-bold);
+    -webkit-transition: .3s;
+    transition: .3s;
+    border-radius: .5rem;
+}
+
 @media screen and (min-width: 768px) {
     body{
         margin: 0;
@@ -150,3 +188,5 @@ input{
 @import "./catalog";
 @import "./footer";
 @import "./loading";
+@import "./detail";
+@import "./review";

@@ -57,6 +57,13 @@
         text-overflow: ellipsis;
     }
 
+    &__noData{
+        color: var(--first-color);
+        text-align: center;
+        font-size: var(--normal-font-size);
+        margin-bottom: var(--mb-1);
+    }
+
     @media screen and (min-width: 568px) {
         &__container{
             grid-template-columns: repeat(3,1fr);
