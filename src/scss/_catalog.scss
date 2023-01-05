@@ -37,9 +37,14 @@
     &__title{
         font-size: var(--h3-font-size);
         margin-bottom: var(--mb-0-25);
-
-        a{
+        line-height: 1.5;
+        
+        a.catalog__link{
+            display: inline-block;
             color: var(--title-color);
+            min-height: 44px;
+            min-width: 44px;
+            vertical-align: middle;
         }
     }
 

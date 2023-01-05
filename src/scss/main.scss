@@ -141,6 +141,8 @@ input{
     border: 1px solid #e2e8f0;
     border-radius: 0.25px;
     font-size: var(--small-font-size);
+    min-height: 44px;
+    min-width: 44px;
     
     &:focus{
         box-shadow: 0 0 0 3px var(--first-color-alt);
