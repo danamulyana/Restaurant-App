@@ -1,19 +1,27 @@
-import Swal from 'sweetalert2';
-
 const initSwalSuccess = (title) => {
-  Swal.fire({
-    title,
-    icon: 'success',
-    confirmButtonText: 'Ok',
-  });
+  import('sweetalert2')
+    .then((module) => module.default)
+    .then((swal) => {
+      swal.fire({
+        title,
+        icon: 'success',
+        confirmButtonText: 'Ok',
+      });
+    })
+    .catch((err) => new Error(err));
 };
 
 const initSwalError = (title) => {
-  Swal.fire({
-    title,
-    icon: 'error',
-    confirmButtonText: 'Ok',
-  });
+  import('sweetalert2')
+    .then((module) => module.default)
+    .then((swal) => {
+      swal.fire({
+        title,
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
+    })
+    .catch((err) => new Error(err));
 };
 
 export { initSwalSuccess, initSwalError };

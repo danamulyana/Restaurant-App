@@ -1,9 +1,11 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
-import { DetailItemTamplate, loading } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import loading from '../templates/loading';
+import DetailResto from '../templates/resto-detail';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import { initSwalError } from '../../utils/swal-initiator';
 import PostReview from '../../utils/post-review';
+import favRestoIdb from '../../data/restaurant-db';
 
 const Detail = {
   async render() {
@@ -22,11 +24,12 @@ const Detail = {
       const data = await RestaurantSource.detailRestaurant(url.id);
       await loading.hide();
       const section = document.querySelector('#detail-resto');
-      section.innerHTML += DetailItemTamplate(data.restaurant);
+      section.innerHTML += DetailResto(data.restaurant);
 
-      LikeButtonInitiator.init({
+      LikeButtonPresenter.init({
         likeButtonContainer: document.querySelector('#LikeContainer'),
         data,
+        favRestoIdb,
       });
 
       const btnSubmit = document.querySelector('#submit-review');

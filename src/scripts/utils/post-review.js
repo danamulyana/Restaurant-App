@@ -1,5 +1,5 @@
 import RestaurantSource from '../data/restaurant-source';
-import { reviewTamplate } from '../views/templates/template-creator';
+import reviewTamplate from '../views/templates/review';
 import { initSwalError } from './swal-initiator';
 
 const PostReview = async (url, name, review) => {

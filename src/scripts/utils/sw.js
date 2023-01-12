@@ -36,7 +36,7 @@ registerRoute(
 );
 
 registerRoute(
-  ({ request }) => request.destination === 'image',
+  ({ request }) => request.destination === 'images',
   new CacheFirst({
     cacheName: 'my-image-cache',
     plugins: [

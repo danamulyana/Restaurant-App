@@ -2,6 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminPngquant = require('imagemin-pngquant');
 
 module.exports = {
   entry: {
@@ -22,14 +26,6 @@ module.exports = {
           outputPath: 'fonts/',
         },
       },
-      {
-        test: /\.(png|jpg|jpe?g|gif|webp)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-        },
-      },
-
     ],
   },
   plugins: [
@@ -42,13 +38,36 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            ignore: ['**/images/hero/**'],
+          },
         },
       ],
     }),
     new InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/utils/sw.js'),
-      injectionPoint: 'self.__WB_MANIFEST',
-      swDest: 'sw.js',
+    }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        ImageminPngquant({
+          quality: [0.3, 0.5],
+        }),
+      ],
+    }),
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 50,
+          },
+        },
+      ],
+      overrideExtension: true,
     }),
   ],
 };

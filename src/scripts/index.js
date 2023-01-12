@@ -1,4 +1,8 @@
-import 'regenerator-runtime'; /* for async await transpile */
+import 'regenerator-runtime';
+import './components/navbar';
+import './components/footer';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import '../scss/main.scss';
 import App from './views/app';
 import swRegister from './utils/sw-register';
