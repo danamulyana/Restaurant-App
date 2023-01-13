@@ -28,7 +28,7 @@ registerRoute(
     cacheName: 'dicoding-restaurant-api-cache',
     plugins: [
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 30,
+        maxAgeSeconds: 60 * 60 * 24 * 30 * 2,
         maxEntries: 100,
       }),
     ],
@@ -36,13 +36,13 @@ registerRoute(
 );
 
 registerRoute(
-  ({ request }) => request.destination === 'images',
+  ({ request }) => request.destination === 'image',
   new CacheFirst({
-    cacheName: 'my-image-cache',
+    cacheName: 'dn-image-cache',
     plugins: [
       new ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 30,
-        maxEntries: 50,
+        maxEntries: 60,
       }),
     ],
   }),
@@ -53,7 +53,7 @@ registerRoute(
     || request.destination === 'script'
     || request.destination === 'worker',
   new StaleWhileRevalidate({
-    cacheName: 'my-assets-cache',
+    cacheName: 'dn-assets-cache',
   }),
 );
 

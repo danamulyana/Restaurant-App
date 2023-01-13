@@ -8,7 +8,16 @@ class NavBar extends HTMLElement {
     this.innerHTML = `
     <nav class="nav container">
         <a href="/" class="nav__logo">
-            <img class="lazyload" src="images/logo-white.webp" width="90" height="50" alt="DN Restaurant">
+            <picture class="nav__logo-white">
+                <source type="image/webp" srcset="images/logo-white.webp">
+                <source type="image/png" srcset="images/logo-white.png">
+                <img class="lazyload" src="images/logo-white.png" width="100" height="55" alt="DN Restaurant Logo">
+            </picture>
+            <picture class="nav__logo-black">
+                <source type="image/webp" srcset="images/logo-black.webp">
+                <source type="image/png" srcset="images/logo-black.png">
+                <img class="lazyload" src="images/logo-black.png" width="90" height="55" alt="DN Restaurant Logo">
+            </picture>
         </a>
         <button class="nav__toggle" id="nav-toggle" aria-controls="nav-list" aria-label="buka navbar" aria-haspopup="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" alt="menu-toggle"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" /></svg>

@@ -15,7 +15,6 @@ const app = new App({
   navLinks: document.querySelectorAll('.nav__link'),
   header: document.querySelector('#header'),
   headerLogo: document.querySelector('#header img'),
-  logo: ['images/logo-black.webp', 'images/logo-white.webp'],
 });
 
 window.addEventListener('hashchange', () => {

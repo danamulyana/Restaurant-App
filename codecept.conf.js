@@ -22,10 +22,16 @@ exports.config = {
   },
   name: 'restaurant-apps',
   plugins: {
+    pauseOnFail: {
+      enabled: true,
+    },
     retryFailedStep: {
       enabled: true,
     },
     screenshotOnFail: {
+      enabled: true,
+    },
+    tryTo: {
       enabled: true,
     },
   },

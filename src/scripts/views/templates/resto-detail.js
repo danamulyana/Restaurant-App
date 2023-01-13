@@ -48,11 +48,11 @@ const DetailResto = (restaurant) => `
             <div class="review-form">
                 <form>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="NameInput" class="form-label">Name</label>
                         <input type="text" class="form-control" id="NameInput" minLength="3" placeholder="Your name..." required />
                     </div>
                     <div class="mb-3">
-                        <label for="Review" class="form-label">Review</label>
+                        <label for="ReviewInput" class="form-label">Review</label>
                         <textarea type="text" class="form-control" id="ReviewInput" minLength="3" placeholder="Your review..." required></textarea>
                     </div>
                     <button class="button" type="submit" id="submit-review">Submit</button>
