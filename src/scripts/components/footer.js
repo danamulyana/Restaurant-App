@@ -6,7 +6,7 @@ class Footer extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <footer class="footer section">
+    <footer class="section">
         <div class="footer__container container">
         <p class="footer__copy" tabindex="0">©️2022 DNRestaurantsApp. All Rigths reserved.</p>
         <div class="footer__terms">
