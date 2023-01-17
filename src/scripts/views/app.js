@@ -4,7 +4,7 @@ import DrawerInitiator from '../utils/drawer-initiator';
 
 class App {
   constructor({
-    buttonToggle, buttonClose, drawer, content, navLinks, header, headerLogo, logo,
+    buttonToggle, buttonClose, drawer, content, navLinks, header,
   }) {
     this._buttonToggle = buttonToggle;
     this._buttonClose = buttonClose;
@@ -12,8 +12,6 @@ class App {
     this._content = content;
     this._navLinks = navLinks;
     this._header = header;
-    this._headerLogo = headerLogo;
-    this._logo = logo;
 
     this._initialAPPSheell();
   }
@@ -34,10 +32,12 @@ class App {
   _scrollPage() {
     if (window.scrollY >= 100) {
       this._header.classList.add('scroll-header');
-      this._headerLogo.src = this._logo[0];
+      document.querySelector('.nav__logo-black').style.display = 'block';
+      document.querySelector('.nav__logo-white').style.display = 'none';
     } else {
       this._header.classList.remove('scroll-header');
-      this._headerLogo.src = this._logo[1];
+      document.querySelector('.nav__logo-black').style.display = 'none';
+      document.querySelector('.nav__logo-white').style.display = 'block';
     }
   }
 

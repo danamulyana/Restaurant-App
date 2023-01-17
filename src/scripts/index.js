@@ -1,4 +1,8 @@
-import 'regenerator-runtime'; /* for async await transpile */
+import 'regenerator-runtime';
+import './components/navbar';
+import './components/footer';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import '../scss/main.scss';
 import App from './views/app';
 import swRegister from './utils/sw-register';
@@ -11,7 +15,6 @@ const app = new App({
   navLinks: document.querySelectorAll('.nav__link'),
   header: document.querySelector('#header'),
   headerLogo: document.querySelector('#header img'),
-  logo: ['images/logo-black.webp', 'images/logo-white.webp'],
 });
 
 window.addEventListener('hashchange', () => {

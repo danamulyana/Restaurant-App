@@ -1,6 +1,7 @@
 import FavRestoIdb from '../../data/restaurant-db';
 import { initSwalError } from '../../utils/swal-initiator';
-import { createItemTemplate, loading } from '../templates/template-creator';
+import catalogCard from '../templates/catalog-card';
+import loading from '../templates/loading';
 
 const Favorite = {
   async render() {
@@ -8,9 +9,7 @@ const Favorite = {
         ${loading.show()}
         <section class="section">
             <h2 class="section__title" tabindex="0">Jelajahi Restoran Favorite Anda</h2>
-            <div class="container" id="catalog-data">
-                
-            </div>
+            <div class="container" id="catalog-data"></div>
         </section>
         `;
   },
@@ -26,7 +25,7 @@ const Favorite = {
         restaurantContainer.classList.add('grid');
         restaurantContainer.classList.add('catalog__container');
         data.forEach((resto) => {
-          restaurantContainer.innerHTML += createItemTemplate(resto);
+          restaurantContainer.innerHTML += catalogCard(resto);
         });
 
         return;

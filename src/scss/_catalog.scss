@@ -26,12 +26,30 @@
     &__rating{
         position: absolute;
         top: 1rem;
-        right: 1rem;
+        right: 0;
         font-size: var(--small-font-size);
         color: #FDCC0D;
         fill: #FDCC0D;
         display: flex;
         gap: 0.3rem;
+        background-color: var(--title-color);
+        border-radius: 40% 0 0 40%;
+        padding: 10px;
+
+        svg,p{
+            z-index: 10;
+        }
+
+        // &::before{
+        //     content: " ";
+        //     position: absolute;
+        //     background-color: var(--title-color);
+        //     width: 100%;
+        //     height: 100%;
+        //     padding: 10px;
+        //     left: 0;
+        //     border-radius: 30% 0 0 30%;
+        // }
     }
 
     &__title{
