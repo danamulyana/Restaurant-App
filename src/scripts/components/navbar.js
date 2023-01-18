@@ -11,12 +11,12 @@ class NavBar extends HTMLElement {
             <picture class="nav__logo-white">
                 <source type="image/webp" srcset="images/logo-white.webp">
                 <source type="image/png" srcset="images/logo-white.png">
-                <img class="lazyload" src="images/logo-white.png" width="100" height="55" alt="DN Restaurant Logo">
+                <img class="lazyload" src="images/logo-white.png" width="150" height="78" alt="DN Restaurant Logo">
             </picture>
             <picture class="nav__logo-black">
                 <source type="image/webp" srcset="images/logo-black.webp">
                 <source type="image/png" srcset="images/logo-black.png">
-                <img class="lazyload" src="images/logo-black.png" width="100" height="55" alt="DN Restaurant Logo">
+                <img class="lazyload" src="images/logo-black.png" width="150" height="78" alt="DN Restaurant Logo">
             </picture>
         </a>
         <button class="nav__toggle" id="nav-toggle" aria-controls="nav-list" aria-label="buka navbar" aria-haspopup="true">
